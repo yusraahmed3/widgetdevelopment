@@ -73,6 +73,42 @@ class Erza_Social_Profile extends WP_Widget {
  
         return $instance;
     }
+    public function widget($args, $instance) {
+ 
+        $title = apply_filters('widget_title', $instance['title']);
+        $facebook = $instance['facebook'];
+        $twitter = $instance['twitter'];
+        $google = $instance['google'];
+        $linkedin = $instance['linkedin'];
+        $instagram = $instance['instagram'];
+        $pinterest = $instance['pinterest'];
+ 
+// social profile link
+        $facebook_profile = '<a class="facebook" href="' . $facebook . '"><i class="fa fa-facebook"></i></a>';
+        $twitter_profile = '<a class="twitter" href="' . $twitter . '"><i class="fa fa-twitter"></i></a>';
+        $google_profile = '<a class="google" href="' . $google . '"><i class="fa fa-google"></i></a>';
+        $linkedin_profile = '<a class="linkedin" href="' . $linkedin . '"><i class="fa fa-linkedin"></i></a>';
+        $instagram_profile = '<a class="instagram href="' . $instagram . '"><i class="fa fa-instagram"></i></a>';
+        $pinterest_profile = '<a class="pinterest href="' . $pinterest . '"><i class="fa fa-pinterest"></i></a>';
+ 
+echo $args['before_widget'];
+if (!empty($title)) {
+echo $args['before_title'] . $title . $args['after_title'];
+}
+ 
+        echo '<div class="social-icons">';
+        echo (!empty($facebook) ) ? $facebook_profile : null;
+        echo (!empty($twitter) ) ? $twitter_profile : null;
+        echo (!empty($google) ) ? $google_profile : null;
+        echo (!empty($linkedin) ) ? $linkedin_profile : null;
+        echo (!empty($instagram)) ? $instagram_profile : null;
+        echo (!empty($pinterest)) ? $pinterest_profile : null;
+        echo '</div>';
+        echo $args['after_widget'];
+}
+
+ }
+
 
 
 ?>
