@@ -61,6 +61,18 @@ class Erza_Social_Profile extends WP_Widget {
         </p>
         <?php
     }
+    public function update($new_instance, $old_instance) {
+        $instance = array();
+        $instance['title'] = (!empty($new_instance['title']) ) ? strip_tags($new_instance['title']) : '';
+        $instance['facebook'] = (!empty($new_instance['facebook']) ) ? strip_tags($new_instance['facebook']) : '';
+        $instance['twitter'] = (!empty($new_instance['twitter']) ) ? strip_tags($new_instance['twitter']) : '';
+        $instance['google'] = (!empty($new_instance['google']) ) ? strip_tags($new_instance['google']) : '';
+        $instance['linkedin'] = (!empty($new_instance['linkedin']) ) ? strip_tags($new_instance['linkedin']) : '';
+        $instance['instagram'] = (!empty($new_instance['instagram']) ) ? strip_tags($new_instance['instagram']) : '';
+        $instance['pinterest'] = (!empty($new_instance['pinterest']) ) ? strip_tags($new_instance['pinterest']) : '';
+ 
+        return $instance;
+    }
 
 
 ?>
