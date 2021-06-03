@@ -109,6 +109,12 @@ echo $args['before_title'] . $title . $args['after_title'];
 
  }
 
+ 
+ function register_erza_social_profile() {
+    register_widget('Erza_Social_Profile');
+    }
+     
+    add_action('widgets_init', 'register_erza_social_profile');
 
 
 ?>
