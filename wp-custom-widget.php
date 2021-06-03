@@ -108,6 +108,11 @@ echo $args['before_title'] . $title . $args['after_title'];
 }
 
  }
+ 
+ function erza_social_profile_widget_css() {
+    wp_enqueue_style('social-profile-widget', plugins_url('wp-custom-widget.css', __FILE__));
+}
+    add_action('wp_enqueue_scripts', 'erza_social_profile_widget_css');
 
  
  function register_erza_social_profile() {
