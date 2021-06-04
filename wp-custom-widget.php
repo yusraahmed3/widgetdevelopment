@@ -103,6 +103,7 @@ echo $args['before_title'] . $title . $args['after_title'];
         echo (!empty($linkedin) ) ? $linkedin_profile : null;
         echo (!empty($instagram)) ? $instagram_profile : null;
         echo (!empty($pinterest)) ? $pinterest_profile : null;
+        echo '</div>';
         echo $args['after_widget'];
 }
 
